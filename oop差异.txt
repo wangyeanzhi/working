@@ -1,0 +1,396 @@
+
+1.  /** @brief 标准数据类型枚举	*/
+	添加：	DT_VQDS = 97,		/**< 带品质的变体数据类型	*/
+	
+2.  250行添加  5K 8K 数据缓冲区定义
+
+3.  400行
+	记录列最大个数 由35改为36
+	#define OOP_MAX_CSDS		(36)		/**< 记录列最大个数				 */
+	#define OOP_MAX_CSDS        (35)        /**< 记录列最大个数	             */
+
+4. 912行
+	添加：
+	/** @brief visible-string128(变长)	*/
+	typedef struct tag_OOP_VISIBLESTR128
+	{
+		uint32	nNum;
+		char	value[128];
+	}OOP_VISIBLEVAR128_T;
+
+5.  970行
+	添加：
+	/** @brief octet-string(可变)	*/
+	typedef struct tag_OOP_OCTETVAR
+	{
+		uint32	nNum;
+		uint8	value[0];
+	}OOP_OCTETVAR_T;
+
+6.  1004
+	添加：
+	/** @brief octet-string(SIZE(256))	*/
+	typedef struct tag_OOP_OCTETVAR512
+	{
+		uint32	nNum;
+		uint8	value[512];
+	}OOP_OCTETVAR512_T;
+	
+7.  1008 添加：
+    /** @brief bit-string(SIZE(32))	*/
+	typedef struct tag_OOP_BITSTRV32
+	{
+		uint32	nNum;
+		uint8	nValue[32];
+	}OOP_BITSTRV32_T;
+	
+8.  1095行 把数据类型BOOL改成BOOLEAN
+	BOOLEAN				bVal;		/**< DT_BOOL					*/
+	BOOL                bVal;       /**< DT_BOOL                    */
+
+9.  1113行 添加road数据类型 
+	OOP_ROAD_T			road;		/**< DT_ROAD					*/
+	
+10. 1121行 添加VQDS数据类型
+	/** @brief VQDS数据类型	*/
+	typedef struct tag_VQDS
+	{
+		uint8					nChoice;	/**< 数据类型						*/
+		union
+		{
+			char				cVal;		/**< DT_INTEGER					*/
+			uint8				byVal;		/**< DT_UNSIGNED				*/
+			int32				nVal;		/**< DT_DOUBLE_LONG				*/
+			uint16				wVal;		/**< DT_LONG_UNSIGNED			*/
+			int16				sVal;		/**< DT_LONG					*/
+			uint32				dwVal;		/**< DT_DOUBLE_LONG_UNSIGNED	*/
+			int64				llVal;		/**< DT_LONG64					*/
+			uint64				ullVal;		/**< DT_LONG64_UNSIGNED			*/
+			float32				fVal;		/**< DT_FLOAT32					*/
+			float64				dbVal;		/**< DT_FLOAT64					*/
+		};
+		OOP_BITSTR8_T			qds;		/**< 品质标志				*/
+	}OOP_VQDS_T;
+
+11. 1289行 添加rsd 方法11定义
+	/** @brief OOP_RSD_T-selector11	*/
+	typedef struct tag_SelectorP11
+	{
+		OOP_DATETIME_S_T	start;
+		OOP_DATETIME_S_T	end;
+		uint8				nTimes;
+		OOP_MSP_T			ms;
+	}OOP_SELECTORP11_T;
+
+	typedef struct tag_Selector11
+	{
+		OOP_DATETIME_S_T	start;
+		OOP_DATETIME_S_T	end;
+		uint8				nTimes;
+		OOP_MSC_T			ms;
+	}OOP_SELECTOR11_T;
+
+12. 1291和1322行 都在记录行选择描述符中添加方法11
+	OOP_SELECTORP11_T	sel11;		/**<  selector11			*/
+
+13. 1438 BOOL类型改为BOOLEAN
+
+14. 分相变量类中，
+	1505行 添加：
+	/** @brief long-unsigned array			*/
+	typedef struct tag_OOP_WORD3V
+	{
+		uint32	nNum;
+		uint32	rsv;
+		uint16  nValue[3];
+	}OOP_WORD3V_T;
+
+	1629行 添加：
+	/** @brief double-long array	*/
+	typedef struct tag_OOP_INT3V
+	{
+		uint32	nNum;
+		uint32	rsv;
+		int32	nValue[3];
+	}OOP_INT3V_T;
+
+15. class-5 谐波中
+	1693行 添加：
+	/** @brief 2033-电压谐波含有量			*/
+	typedef struct tag_OOP_HARMONIC_VOL
+	{
+		uint32		    nNum;
+		uint32			rsv;
+		uint16		    nValue[OOP_MAX_HARMONIC];
+	}OOP_HARMONIC_VOL_T;
+
+	/** @brief 2034-电流谐波含有量			*/
+	typedef struct tag_OOP_HARMONIC_AMP
+	{
+		uint32		    nNum;
+		uint32			rsv;
+		int32		    nValue[OOP_MAX_HARMONIC];
+	}OOP_HARMONIC_AMP_T;
+
+16. 1750行 最大事件状态数 由32改为48
+	#define OOP_MAX_EVTSTAT		(48)	/**< 最大事件状态数	*/
+	#define OOP_MAX_EVTSTAT     (32)    /**< 最大事件状态数  */
+
+17. class-19 设备管理接口类中，
+	2114行 添加设备运行信息：
+	/** @brief 设备运行信息 */
+	typedef struct tag_OOP_DEVICERUNSTAT
+	{
+		uint8				cpuCoreNum;		/**< cpu核数 */ 
+		uint16				cpuMainFrq;		/**< cpu主频 */
+		uint16				cpuCache;		/**< cpu缓存 */
+		OOP_VISIBLEVAR_T 	cpuArchi;		/**< cpu架构 */
+		uint32				phyMem;			/**< 物理内存 */
+		uint32				virMem;			/**< 虚拟内存 */
+		uint32				diskSpace;		/**< 磁盘总空间 */
+		uint16				memUsage;		/**< 内存使用率 */
+		uint16				diskUsage;		/**< 磁盘使用率 */
+		uint16				cpuUsage;		/**< cpu使用率 */
+		OOP_VISIBLEVAR_T	osName;			/**< 操作系统名称 */
+		OOP_VISIBLEVAR_T	osVer;			/**< 操作系统版本 */
+		OOP_VISIBLEVAR_T	osKernel;		/**< 操作系统内核 */
+		OOP_DATETIME_S_T	sysStrtm;		/**< 系统启动时间 */
+	}OOP_DEVICERUNSTAT_T;
+
+18. class-25 公网通信接口类中，2438行工作模式中添加MQTT模式
+	/** @brief 工作模式	*/
+	typedef enum tag_WORKMODE
+	{
+		MODE_MIX	= 0,	/**< 混合模式		*/
+		MODE_CLIENT,		/**< 客户机模式	*/
+		MODE_SERVER,		/**< 服务器模式	*/
+		MODE_MQTT			/**< MQTT模式		*/
+	}OOP_WORKMODE_E;
+
+19. 3031行 添加终端低电压事件和电能质量分析事件参数
+	/** @brief 3701-终端低电压事件*/
+	typedef struct tag_OOP_EVTCFG_3701
+	{
+		uint16   ldVolt;            /**< 低电压阈值*/
+		uint16   ubVolt;            /**< 三相不平衡阈值*/
+		uint16   dutyVolt;          /**< 负载率阈值 */
+	}OOP_EVTCFG_3701_T;
+
+	/**< 电能质量分析事件参数 */
+	typedef struct tag_OOP_EVTCFG_PQA
+	{
+		OOP_EVTCFG_3701_T       lowvol;                         // 3701-台区低电压参数 
+		OOP_CFG_LU_T            volunb;                         // 3702-台区电压不平衡参数 
+		OOP_CFG_LU_T            ampunb;                         // 3703-台区电流不平衡参数 
+		OOP_CFG_LU_T            overload;                       // 3704-台区负载率限值参数 
+		OOP_CFG_LU_T            overfreq;                       // 3705-台区频率限值参数 
+	}OOP_EVTCFG_PQA_T;
+
+20. 3136行，在3303-发现未知电能表事件单元中，最大搜到的付加信息个数由1个改成4个
+	#define OOP_MAX_ADDEDINFO	(4)		/**< 最大搜到的付加信息个数	*/
+	#define OOP_MAX_ADDEDINFO   (1)     /**< 最大搜到的付加信息个数  */
+
+21. 3277行，330A-遥控记录单元定义中，
+	添加：
+	uint8				cmd;
+	删除：
+	int64               prePower[8];
+    int64               llPower[8];
+
+22. 3325行，在 330D-终端对电表校时记录单元中，添加电表校时信息
+	/** @brief 电表校时信息	*/
+	typedef struct tag_OOP_CHK_TIMEINFO
+	{
+		OOP_OCTETVAR16_T	add;            /**< 电能表地址		*/
+		OOP_DATETIME_S_T	chkTime;        /**< 校时时间		*/
+		OOP_DATETIME_S_T	beforechkTime;  /**< 校时前时间	    */
+		int16				error;          /**< 误差			*/
+	}OOP_CHK_TIMEINFO_T;
+	
+23. 3574行，添加331C-参数变更记录单元
+	
+24. 3731行，添加3402-充电计划上报事件
+	3771行，添加3403-充电申请事件
+
+25. 3832行，添加广播校时参数和时间同步周期
+	/** @brief 广播校时参数	*/
+	typedef struct tag_OOP_BROADCASTCLOCK
+	{
+		uint16	nMinDeviate;		/**< 最小校时偏差 	*/
+		uint16	nMaxDeviate;		/**< 最大校时偏差 	*/
+	}OOP_BROADCASTCLOCK_T;
+
+	/** @brief 时间同步周期			*/
+	typedef struct tag_OOP_SYNCCYCLE
+	{
+		uint32	norperiod;		/**< 北向同步周期	*/
+		uint32	souperiod;		/**< 南向同步周期	*/
+	}OOP_SYNCCYCLE_T;
+
+26. 4062行，添加4031-电能表模组列表
+	/** @brief 4031-电能表模组列表	*/
+	#define OOP_MAX_METER_MOD	(4)
+
+	typedef struct tag_OOP_METERMOD_UNIT
+	{
+		OOP_VISIBLEVAR128_T szName;			/**< 模组描述符 */
+		uint8               nVxd;			/**< 逻辑地址 */
+		OOP_BITSTRV32_T     modType;		/**< 模组类别 */
+		OOP_OCTETVAR64_T    serialNum;		/**< 模组序列号 */
+	}OOP_METERMOD_UNIT_T;
+
+	typedef struct tag_OOP_METERMOD_LIST
+	{
+		uint32 nNum;
+		uint32 rsv;
+		OOP_METERMOD_UNIT_T info[OOP_MAX_METER_MOD];
+	}OOP_METERMOD_LIST;
+
+27. 4223行，添加 4800-非介入式负荷感知模块
+
+28. 4372行， 在6001采集档案配置单元中，添加更新档案附属信息方法
+	/** @brief 更新档案附属信息方法	*/
+	typedef struct tag_OOPM_METER_135
+	{
+		OOP_TSA_T			add;
+		OOP_METER_ANNEX_T	annex;
+	}OOPM_METER_135_T;
+
+29. 4569行，添加修改普通方案的列筛选
+	/** @brief 修改普通方案的列筛选	*/
+	typedef struct tag_OOPM_NTASK_200
+	{
+		uint8				index;
+		OOP_MSP_T			ms;
+	}OOPM_NTASK_200_T;
+
+30. 4616行，在6016-事件采集方案中添加事件采集方案上报通道
+	/** @brief 事件采集方案上报通道	*/
+	typedef struct tag_OOP_PLAN_EVENT_CHANNEL
+	{
+		uint8				planID;				/**< 方案编号		*/
+		OOP_OADS_T			channel;			/**< 上报通道		*/
+	}OOP_PLAN_EVENT_CHANNEL_T;
+
+31. 4839行，添加6051(属性2)-线损计算数据
+	/** @brief 6051(属性2)-线损计算数据*/
+	typedef struct tag_OOP_LNLS_UNIT
+	{
+		uint32	eneSup;			/**< 供电量*/
+		uint32	eneSal;			/**< 售电量*/
+		uint32	eneDeliv;		/**< 倒送电量*/
+		uint32	eneDistrpwrnet; /**< 分布式电源上网电量*/
+		int16	nRatio;			/**< 线损率*/
+		uint8   abnorFlag;		/**< 异常标记(enum)*/
+	}OOP_LNLS_UNIT_T;
+
+	typedef struct tag_OOP_LNLS_STATISVAL
+	{
+		uint32 nNum;
+		uint32 rsv;
+		OOP_LNLS_UNIT_T nVal[OOP_MAX_LNLS];
+	}OOP_LNLS_STATISVAL_T;
+
+	/** @brief 6051(属性4)-线损统计周期*/
+	typedef struct tag_OOP_LNLSPER
+	{
+		OOP_TI_T statime;	/**< 统计周期*/
+	}OOP_LNLSPER_T;
+
+32. 4875行，添加7200- 充电计划单
+
+33. 4901行，添加7300-容器集合
+
+34. 4936行，添加7301-应用集合
+
+35. 在文件传输对象中，
+	5243行，添加F000-文件分帧传输管理
+	/** @brief F000-文件分帧传输管理	*/
+	typedef struct tag_OOPM_DOWNLOADFILE
+	{
+		OOP_VISIBLEVAR128_T	file;		/**< 文件路径			*/
+		uint32				nOffset;	/**< 偏移位置			*/
+		uint32				nLen;		/**< 读取长度			*/
+	}OOPM_DOWNLOADFILE_T;
+	
+	5291行，添加代发
+	/** @brief 代发	*/
+	typedef struct tag_OOPM_FILEPROXY
+	{
+		uint8					type;		/**< 数据类型						*/
+		union
+		{
+			OOP_OAD_U			oad;		/**< DT_OAD						*/
+			OOP_ROAD_T			road;		/**< DT_ROAD					*/		
+			OOP_TSA_T			tsa;		/**< DT_TSA						*/
+			OOP_MSP_T			ms;			/**< DT_MS						*/
+		};
+	}OOPM_FILEPROXY_T;
+
+	5322行，启动块传输中，传输块大小nBlockSize由类型uint16改为uint32。
+	
+	5330行，写数据块中，data由类型OOP_OCTETVAR2K_T改为OOP_OCTETVAR_T。
+
+36. 5785行，添加F209 属性12:版本信息
+	// F209 属性12:版本信息
+	typedef struct tag_OOP_NODEVERSIONINFO
+	{
+		OOP_OCTETSTR6_T	    addr;
+		uint8			    type;
+		uint16			    wVer;
+		OOP_DATE_T			dtVer;
+		OOP_VISIBLEVAR_T	factory;
+		OOP_VISIBLEVAR_T	ic;
+	}OOP_NODEVERSIONINFO_T;
+
+37. 6006行，添加F20D-模组
+
+38. 6.63行，添加F20F-服务组件
+
+39. 在F213-容器集合中，
+	6115行，添加
+	/** @brief 对象容器值域*/
+	typedef struct tag_OOP_CONTAINER_VAL
+	{
+		OOP_CONTAINER_CFG_T		cfg;
+		uint8					value[OOP_MAX_CONTAINER_OAD*128];
+	}OOP_CONTAINER_VAL;
+	
+	6147行，添加过载、重载参数
+	/** @brief 过载、重载参数	*/
+	typedef struct tag_OOP_LOAD_PARA
+	{
+		uint32		limit;	    /**< 电流阈值*/
+		int16		delay;	    /**< 告警延时*/
+	}OOP_LOAD_PARA_T;
+
+40. 6373行，修改交采谐波数据块
+	将数据块：
+	/** @brief 交采谐波数据块	*/
+	typedef struct tag_OOP_HARMONIC_BLOCK
+	{
+		OOP_HARMONIC_T volharmval[3];
+		OOP_HARMONIC_T volharmrat[3];
+		OOP_HARMONIC_T ampharmval[3];
+		OOP_HARMONIC_T ampharmrat[3];
+	}OOP_HARMONIC_BLOCK_T;
+	改为：
+	/** @brief 交采谐波数据块	*/
+	typedef struct tag_OOP_HARMONIC_BLOCK
+	{
+		OOP_HARMONIC_T volharmrat[3];
+		OOP_HARMONIC_T ampharmrat[3];
+		OOP_HARMONIC_VOL_T volharmval[3];
+		OOP_HARMONIC_AMP_T ampharmval[3];
+	}OOP_HARMONIC_BLOCK_T;
+
+	6382行，交采电能质量数据块添加参数：
+	uint16			zerovol_v;		/**< 零序电压>（矢量和法）*/
+	int32 			zeroamp_v;		/**< 零序电流>（矢量和法）*/
+
+
+
+
+
+
+
