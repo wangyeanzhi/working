@@ -1,0 +1,42 @@
+
+1. git安装完成后
+    $ git config --global user.name "Your Name"
+    $ git config --global user.email "email@example.com"
+这个命令，应该是全局生效的，也就是在git安装完后，输入一次就可以，以后是不需要这么做的。
+
+2. 基本操作
+    初始化一个Git仓库，使用git init命令。
+
+    添加文件到Git仓库，分两步：
+
+    使用命令git add <file>，注意，可反复多次使用，添加多个文件；
+    使用命令git commit -m <message>，完成。
+
+3. 远程仓库
+    要关联一个远程库，使用命令git remote add origin git@server-name:path/repo-name.git；
+
+    关联后，使用命令git push -u origin master第一次推送master分支的所有内容；
+
+    此后，每次本地提交后，只要有必要，就可以使用命令git push origin master推送最新修改；
+
+先用一下这些就简单的命令。
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
