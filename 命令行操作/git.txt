@@ -1,4 +1,6 @@
 
+Ctrl+~(tab上面的那个波浪号)： 打开终端
+
 1. git安装完成后
     $ git config --global user.name "Your Name"
     $ git config --global user.email "email@example.com"
@@ -21,7 +23,10 @@
 
 先用一下这些就简单的命令。
 
-
+使用下面三条命令就可以把修改的内容，推送到github。
+    git add <file>
+    git commit -m <message>
+    git push origin master
 
 
 
