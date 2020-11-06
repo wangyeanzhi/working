@@ -1,0 +1,133 @@
+<mxfile host="65bd71144e" modified="2020-11-06T01:09:37.540Z" agent="5.0 (Windows NT 6.1; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Code/1.50.1 Chrome/83.0.4103.122 Electron/9.2.1 Safari/537.36" version="13.6.5" etag="QWrRdsJ4Wf2IGb8nlhbg">
+    <diagram id="I5GKAkVhQRcE6VlfBdlo" name="第 1 页">
+        <mxGraphModel dx="846" dy="652" grid="1" gridSize="10" guides="1" tooltips="1" connect="1" arrows="1" fold="1" page="1" pageScale="1" pageWidth="827" pageHeight="1169" math="0" shadow="0">
+            <root>
+                <mxCell id="0"/>
+                <mxCell id="1" parent="0"/>
+                <mxCell id="5" style="edgeStyle=orthogonalEdgeStyle;curved=0;rounded=1;sketch=0;orthogonalLoop=1;jettySize=auto;html=1;exitX=0.5;exitY=1;exitDx=0;exitDy=0;entryX=0.5;entryY=0;entryDx=0;entryDy=0;" edge="1" parent="1" source="2" target="4">
+                    <mxGeometry relative="1" as="geometry"/>
+                </mxCell>
+                <mxCell id="2" value="op1" style="rounded=0;whiteSpace=wrap;html=1;sketch=0;" vertex="1" parent="1">
+                    <mxGeometry x="20" y="30" width="120" height="60" as="geometry"/>
+                </mxCell>
+                <mxCell id="3" value="发送停止从节点上报" style="rounded=0;whiteSpace=wrap;html=1;sketch=0;" vertex="1" parent="1">
+                    <mxGeometry x="20" y="590" width="120" height="60" as="geometry"/>
+                </mxCell>
+                <mxCell id="6" style="edgeStyle=orthogonalEdgeStyle;curved=0;rounded=1;sketch=0;orthogonalLoop=1;jettySize=auto;html=1;exitX=0.5;exitY=1;exitDx=0;exitDy=0;" edge="1" parent="1" source="4" target="3">
+                    <mxGeometry relative="1" as="geometry"/>
+                </mxCell>
+                <mxCell id="11" style="edgeStyle=orthogonalEdgeStyle;curved=0;rounded=1;sketch=0;orthogonalLoop=1;jettySize=auto;html=1;exitX=1;exitY=0.5;exitDx=0;exitDy=0;entryX=0.5;entryY=0;entryDx=0;entryDy=0;" edge="1" parent="1" source="4" target="8">
+                    <mxGeometry relative="1" as="geometry"/>
+                </mxCell>
+                <mxCell id="4" value="到总?" style="rhombus;whiteSpace=wrap;html=1;rounded=0;sketch=0;" vertex="1" parent="1">
+                    <mxGeometry x="35" y="130" width="90" height="80" as="geometry"/>
+                </mxCell>
+                <mxCell id="7" value="是" style="text;html=1;align=center;verticalAlign=middle;resizable=0;points=[];autosize=1;" vertex="1" parent="1">
+                    <mxGeometry x="35" y="210" width="30" height="20" as="geometry"/>
+                </mxCell>
+                <mxCell id="14" style="edgeStyle=orthogonalEdgeStyle;curved=0;rounded=1;sketch=0;orthogonalLoop=1;jettySize=auto;html=1;exitX=0.5;exitY=1;exitDx=0;exitDy=0;entryX=0.5;entryY=0;entryDx=0;entryDy=0;" edge="1" parent="1" source="8" target="13">
+                    <mxGeometry relative="1" as="geometry"/>
+                </mxCell>
+                <mxCell id="17" style="edgeStyle=orthogonalEdgeStyle;curved=0;rounded=1;sketch=0;orthogonalLoop=1;jettySize=auto;html=1;exitX=1;exitY=0.5;exitDx=0;exitDy=0;entryX=0.5;entryY=0;entryDx=0;entryDy=0;" edge="1" parent="1" source="8" target="16">
+                    <mxGeometry relative="1" as="geometry"/>
+                </mxCell>
+                <mxCell id="8" value="到10?" style="rhombus;whiteSpace=wrap;html=1;rounded=0;sketch=0;" vertex="1" parent="1">
+                    <mxGeometry x="170" y="220" width="80" height="80" as="geometry"/>
+                </mxCell>
+                <mxCell id="12" value="否" style="text;html=1;align=center;verticalAlign=middle;resizable=0;points=[];autosize=1;" vertex="1" parent="1">
+                    <mxGeometry x="115" y="180" width="30" height="20" as="geometry"/>
+                </mxCell>
+                <mxCell id="25" style="edgeStyle=orthogonalEdgeStyle;curved=0;rounded=1;sketch=0;orthogonalLoop=1;jettySize=auto;html=1;entryX=0;entryY=0.5;entryDx=0;entryDy=0;" edge="1" parent="1" source="13" target="23">
+                    <mxGeometry relative="1" as="geometry"/>
+                </mxCell>
+                <mxCell id="13" value="下发10hf4" style="rounded=0;whiteSpace=wrap;html=1;sketch=0;" vertex="1" parent="1">
+                    <mxGeometry x="150" y="500" width="120" height="60" as="geometry"/>
+                </mxCell>
+                <mxCell id="15" value="是" style="text;html=1;align=center;verticalAlign=middle;resizable=0;points=[];autosize=1;" vertex="1" parent="1">
+                    <mxGeometry x="175" y="300" width="30" height="20" as="geometry"/>
+                </mxCell>
+                <mxCell id="24" style="edgeStyle=orthogonalEdgeStyle;curved=0;rounded=1;sketch=0;orthogonalLoop=1;jettySize=auto;html=1;entryX=0;entryY=0.5;entryDx=0;entryDy=0;" edge="1" parent="1" source="16" target="22">
+                    <mxGeometry relative="1" as="geometry"/>
+                </mxCell>
+                <mxCell id="16" value="return 0" style="rounded=0;whiteSpace=wrap;html=1;sketch=0;" vertex="1" parent="1">
+                    <mxGeometry x="230" y="320" width="120" height="60" as="geometry"/>
+                </mxCell>
+                <mxCell id="18" value="否" style="text;html=1;align=center;verticalAlign=middle;resizable=0;points=[];autosize=1;" vertex="1" parent="1">
+                    <mxGeometry x="245" y="230" width="30" height="20" as="geometry"/>
+                </mxCell>
+                <mxCell id="31" style="edgeStyle=orthogonalEdgeStyle;curved=0;rounded=1;sketch=0;orthogonalLoop=1;jettySize=auto;html=1;exitX=0.5;exitY=1;exitDx=0;exitDy=0;" edge="1" parent="1" source="19" target="28">
+                    <mxGeometry relative="1" as="geometry"/>
+                </mxCell>
+                <mxCell id="19" value="op2" style="rounded=0;whiteSpace=wrap;html=1;sketch=0;" vertex="1" parent="1">
+                    <mxGeometry x="660" y="40" width="120" height="60" as="geometry"/>
+                </mxCell>
+                <mxCell id="27" style="edgeStyle=orthogonalEdgeStyle;curved=0;rounded=1;sketch=0;orthogonalLoop=1;jettySize=auto;html=1;exitX=1;exitY=0.5;exitDx=0;exitDy=0;" edge="1" parent="1" source="22" target="26">
+                    <mxGeometry relative="1" as="geometry"/>
+                </mxCell>
+                <mxCell id="22" value="开启定时器&lt;br&gt;这个地方不能是10分钟,不然不能时刻刷新" style="rounded=0;whiteSpace=wrap;html=1;sketch=0;" vertex="1" parent="1">
+                    <mxGeometry x="390" y="90" width="120" height="200" as="geometry"/>
+                </mxCell>
+                <mxCell id="23" value="收到10f4fan" style="rounded=0;whiteSpace=wrap;html=1;sketch=0;" vertex="1" parent="1">
+                    <mxGeometry x="400" y="440" width="120" height="200" as="geometry"/>
+                </mxCell>
+                <mxCell id="29" style="edgeStyle=orthogonalEdgeStyle;curved=0;rounded=1;sketch=0;orthogonalLoop=1;jettySize=auto;html=1;" edge="1" parent="1" source="26" target="28">
+                    <mxGeometry relative="1" as="geometry"/>
+                </mxCell>
+                <mxCell id="26" value="定时时间到?" style="rhombus;whiteSpace=wrap;html=1;rounded=0;sketch=0;" vertex="1" parent="1">
+                    <mxGeometry x="550" y="150" width="90" height="80" as="geometry"/>
+                </mxCell>
+                <mxCell id="33" style="edgeStyle=orthogonalEdgeStyle;curved=0;rounded=1;sketch=0;orthogonalLoop=1;jettySize=auto;html=1;entryX=0.5;entryY=0;entryDx=0;entryDy=0;" edge="1" parent="1" source="28" target="32">
+                    <mxGeometry relative="1" as="geometry">
+                        <Array as="points">
+                            <mxPoint x="615" y="250"/>
+                        </Array>
+                    </mxGeometry>
+                </mxCell>
+                <mxCell id="36" style="edgeStyle=orthogonalEdgeStyle;curved=0;rounded=1;sketch=0;orthogonalLoop=1;jettySize=auto;html=1;" edge="1" parent="1" source="28">
+                    <mxGeometry relative="1" as="geometry">
+                        <mxPoint x="767" y="420" as="targetPoint"/>
+                        <Array as="points">
+                            <mxPoint x="767" y="210"/>
+                        </Array>
+                    </mxGeometry>
+                </mxCell>
+                <mxCell id="28" value="收到数据?" style="rhombus;whiteSpace=wrap;html=1;rounded=0;sketch=0;" vertex="1" parent="1">
+                    <mxGeometry x="680" y="170" width="80" height="80" as="geometry"/>
+                </mxCell>
+                <mxCell id="30" value="是" style="text;html=1;align=center;verticalAlign=middle;resizable=0;points=[];autosize=1;" vertex="1" parent="1">
+                    <mxGeometry x="625" y="160" width="30" height="20" as="geometry"/>
+                </mxCell>
+                <mxCell id="32" value="重试到op1" style="rounded=0;whiteSpace=wrap;html=1;sketch=0;" vertex="1" parent="1">
+                    <mxGeometry x="555" y="340" width="120" height="60" as="geometry"/>
+                </mxCell>
+                <mxCell id="34" value="否" style="text;html=1;align=center;verticalAlign=middle;resizable=0;points=[];autosize=1;" vertex="1" parent="1">
+                    <mxGeometry x="680" y="260" width="30" height="20" as="geometry"/>
+                </mxCell>
+                <mxCell id="37" value="是" style="text;html=1;align=center;verticalAlign=middle;resizable=0;points=[];autosize=1;" vertex="1" parent="1">
+                    <mxGeometry x="765" y="210" width="30" height="20" as="geometry"/>
+                </mxCell>
+                <mxCell id="41" style="edgeStyle=orthogonalEdgeStyle;curved=0;rounded=1;sketch=0;orthogonalLoop=1;jettySize=auto;html=1;entryX=0.5;entryY=0;entryDx=0;entryDy=0;" edge="1" parent="1" source="38" target="40">
+                    <mxGeometry relative="1" as="geometry"/>
+                </mxCell>
+                <mxCell id="44" style="edgeStyle=orthogonalEdgeStyle;curved=0;rounded=1;sketch=0;orthogonalLoop=1;jettySize=auto;html=1;entryX=0.5;entryY=0;entryDx=0;entryDy=0;" edge="1" parent="1" source="38" target="43">
+                    <mxGeometry relative="1" as="geometry"/>
+                </mxCell>
+                <mxCell id="38" value="路由结束" style="rhombus;whiteSpace=wrap;html=1;rounded=1;sketch=0;" vertex="1" parent="1">
+                    <mxGeometry x="727" y="420" width="80" height="80" as="geometry"/>
+                </mxCell>
+                <mxCell id="40" value="重新设置10,在到op1" style="rounded=0;whiteSpace=wrap;html=1;sketch=0;" vertex="1" parent="1">
+                    <mxGeometry x="590" y="550" width="120" height="60" as="geometry"/>
+                </mxCell>
+                <mxCell id="42" value="否" style="text;html=1;align=center;verticalAlign=middle;resizable=0;points=[];autosize=1;" vertex="1" parent="1">
+                    <mxGeometry x="675" y="430" width="30" height="20" as="geometry"/>
+                </mxCell>
+                <mxCell id="43" value="发送停止从节点上报" style="rounded=0;whiteSpace=wrap;html=1;sketch=0;" vertex="1" parent="1">
+                    <mxGeometry x="707" y="640" width="120" height="60" as="geometry"/>
+                </mxCell>
+                <mxCell id="45" value="是" style="text;html=1;align=center;verticalAlign=middle;resizable=0;points=[];autosize=1;" vertex="1" parent="1">
+                    <mxGeometry x="765" y="500" width="30" height="20" as="geometry"/>
+                </mxCell>
+            </root>
+        </mxGraphModel>
+    </diagram>
+</mxfile>
